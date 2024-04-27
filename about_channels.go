@@ -3,15 +3,15 @@ package go_koans
 func aboutChannels() {
 	ch := make(chan string, 2)
 
-	assert(len(ch) == __int__) // channels are like buffers
+	Assert(len(ch) == __int__) // channels are like buffers
 
 	ch <- "foo" // i mean, "metaphors are like similes"
 
-	assert(len(ch) == __int__) // they can be queried for queued items
+	Assert(len(ch) == __int__) // they can be queried for queued items
 
-	assert(<-ch == __string__) // items can be popped out of them
+	Assert(<-ch == __string__) // items can be popped out of them
 
-	assert(len(ch) == __int__) // and len() always reflects the "current" queue status
+	Assert(len(ch) == __int__) // and len() always reflects the "current" queue status
 
 	// the 'go' keyword runs a function-call in a new "goroutine"
 	// which executes "concurrently" with the calling "goroutine"
@@ -19,7 +19,7 @@ func aboutChannels() {
 		// your code goes here
 	}()
 
-	assert(__delete_me__) // we'll need to make room for the queue, or suffer deadlocks
+	Assert(__delete_me__) // we'll need to make room for the queue, or suffer deadlocks
 
 	ch <- "bar"   // this send will succeed
 	ch <- "quux"  // there's enough room for this send too

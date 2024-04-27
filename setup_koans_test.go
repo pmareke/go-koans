@@ -47,7 +47,7 @@ func TestKoans(t *testing.T) {
 	fmt.Printf("\n%c[32;1mYou won life. Good job.%c[0m\n\n", 27, 27)
 }
 
-func assert(o bool) {
+func Assert(o bool) {
 	if !o {
 		fmt.Printf("\n%c[35m%s%c[0m\n\n", 27, __getRecentLine(), 27)
 		os.Exit(1)
